@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sort_options">
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <!-- Add more options as needed -->
+    </array>
+    <string-array name="game_categories">
+        <item>Adventure</item>
+        <item>Action</item>
+        <item>Puzzle</item>
+        <item>Racing</item>
+        <!-- Add more game categories as needed -->
+    </string-array>
+
+    <string-array name="achievement_recommendations">
+        <item>Master of the Maze</item>
+        <item>Speed Demon</item>
+        <item>Champion of Challenges</item>
+        <item>Explorer Extraordinaire</item>
+        <!-- Add more achievement recommendations as needed -->
+    </string-array>
+
+</resources>
+
+

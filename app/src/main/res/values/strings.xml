@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">app</string>
+
+    <string name="ok_button_description">OK Button</string>
+    <string name="sort_prompt">Select sorting option</string>
+
+    <string-array name="security_questions">
+        <item>What was the name of your first pet?</item>
+        <item>In which city were you born?</item>
+        <item>What is your favorite movie/book/TV show?</item>
+    </string-array>
+
+</resources>

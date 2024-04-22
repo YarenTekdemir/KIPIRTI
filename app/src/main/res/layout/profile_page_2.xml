@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/constarintColor">
+
+    <LinearLayout
+        android:id="@+id/avatarUsernameLayout"
+        android:layout_width="398dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customborder"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/customborder"
+            android:scaleType="centerCrop"
+            android:src="@drawable/oyun"
+            app:shapeAppearanceOverlay="@style/Circular" />
+
+        <!-- User Info -->
+        <LinearLayout
+            android:id="@+id/userInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User's Name"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Biography -->
+            <TextView
+                android:id="@+id/biographyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="User's Biography"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/achievementsTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:textSize="20sp"
+        android:text="Achievements"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <!-- Achievements Images -->
+    <HorizontalScrollView
+        android:layout_width="397dp"
+        android:layout_height="146dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/customborder"
+        android:contentDescription="Scrollable Achievements">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <!-- Replace these ImageViews with actual achievement icons -->
+
+            <ImageView
+                android:id="@+id/achievementImageView1"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/trophy_image2" />
+
+            <ImageView
+                android:id="@+id/achievementImageView2"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/trophy_image1" />
+
+            <ImageView
+                android:id="@+id/achievementImageView3"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/trophy_image2" />
+
+            <ImageView
+                android:id="@+id/achievementImageView4"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/trophy_image1" />
+
+            <ImageView
+                android:id="@+id/left"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/baseline_chevron_right_24" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Favorite Word Section -->
+    <TextView
+        android:id="@+id/favoriteWordTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:text="Favorite Word"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <!-- Favorite Word TextView -->
+    <TextView
+        android:id="@+id/usersfavwords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:text="Favorite Word"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/constarintColor">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+
+        >
+
+        <ImageButton
+            android:id="@+id/okbtn1"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/left"
+            android:contentDescription="@string/ok_button_description"
+            android:onClick="buttonClick" />
+
+        <TextView
+            android:id="@+id/headlineTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Edit Profile"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <!-- Profile image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"
+        android:src="@drawable/unzu"
+        android:layout_marginLeft="0dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/Circular"/>
+
+
+    <!-- Change profile image button -->
+    <Button
+        android:id="@+id/changeProfileImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Change Photo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="441dp"
+        android:layout_below="@id/changeProfileImageButton"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_background"
+        android:orientation="vertical">
+
+        <!-- Nickname field -->
+        <EditText
+            android:id="@+id/editTextNickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Your full name..."
+            android:inputType="text"
+            android:maxLines="1"
+            android:minHeight="48dp" />
+
+
+        <!-- Username field -->
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Your Username..."
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+        <!-- Bio field -->
+        <EditText
+            android:id="@+id/addbio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:hint="A little about you..."
+            android:inputType="textMultiLine"
+            android:lines="3" />
+
+        <!-- Favorite word field -->
+        <EditText
+            android:id="@+id/addfavword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Your Favorite word..."
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:minHeight="48dp" />
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addfavword"
+        android:orientation="horizontal"
+        android:layout_marginTop="36dp"
+        android:layout_marginHorizontal="20dp">
+
+        <!-- Save Changes button -->
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save Changes"
+            android:background="@drawable/button_rounded"
+            />
+
+        <!-- Cancel Changes button -->
+        <Button
+            android:id="@+id/cancelbutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="Cancel Changes"
+            android:background="@drawable/button_rounded"
+            />
+
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
