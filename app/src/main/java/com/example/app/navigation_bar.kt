@@ -1,39 +1,37 @@
 package com.example.app
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.app.databinding.NavigationBarBinding
 
 class navigation_bar : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
+    lateinit var binding: NavigationBarBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.mainactivity)
+        binding = NavigationBarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val homeButton: Button = findViewById(R.id.homeButton)
-        val profileButton: Button = findViewById(R.id.profileButton)
-        val gameButton: Button = findViewById(R.id.gameButton)
-
-        homeButton.setOnClickListener {
-            // Navigate to HomeActivity
-            val intent = Intent(this, main_page::class.java)
-            startActivity(intent)
+        binding.homeButton.setOnClickListener {
+            showToast("Home Button Clicked")
         }
 
-        profileButton.setOnClickListener {
-            // Navigate to ProfileActivity
-            val intent = Intent(this, profile_page::class.java)
-            startActivity(intent)
+        binding.profileButton.setOnClickListener {
+            showToast("Profile Button Clicked")
         }
 
-        gameButton.setOnClickListener {
-            // For example, navigate to the login screen
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish() // Optionally, finish the current activity
+        binding.gameButton.setOnClickListener {
+            showToast("Game Button Clicked")
         }
+
+        binding.addIcon.setOnClickListener {
+            showToast("Add Button Clicked")
+        }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

@@ -5,15 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/constarintColor">
+    android:background="@drawable/background_gradient">
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/plus_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="295dp"
+            android:src="@drawable/add" />
+
+        <ImageView
+            android:id="@+id/list_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/list" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/avatarUsernameLayout"
         android:layout_width="398dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/customborder"
-        android:layout_marginTop="15dp"
+        android:layout_height="120dp"
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
         android:gravity="center_vertical"
         android:padding="16dp">
 
@@ -32,7 +56,7 @@
         <!-- User Info -->
         <LinearLayout
             android:id="@+id/userInfoLayout"
-            android:layout_width="match_parent"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:orientation="vertical">
@@ -58,6 +82,8 @@
                 android:textSize="14sp" />
 
         </LinearLayout>
+
+
     </LinearLayout>
 
     <TextView
@@ -77,7 +103,6 @@
         android:layout_height="146dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/customborder"
         android:contentDescription="Scrollable Achievements">
 
         <LinearLayout

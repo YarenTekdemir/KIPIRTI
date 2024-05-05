@@ -1,245 +1,86 @@
-<!-- item_post.xml -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/constarintColor"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background_gradient">
 
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="20dp"
-        android:text="MAİN PAGE"
-        android:textSize="25dp" />
-
-    <!-- Image View for the first post image -->
-
-    <LinearLayout
+    <!-- EditText for user input -->
+    <EditText
+        android:id="@+id/thoughtInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:hint="Share your thoughts..."
+        android:inputType="textMultiLine"
+        android:maxLines="3"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp" />
 
-        <!-- User1's Image -->
-        <ImageView
-            android:id="@+id/user1ImageView"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="8dp"
-            tools:srcCompat="@tools:sample/avatars"
-            android:contentDescription="User1's Image"/>
-
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_marginTop="12dp"
-            android:layout_width="62dp"
-            android:layout_height="wrap_content"
-            android:text="  user1"
-            android:textSize="15dp"
-            tools:ignore="TextSizeCheck" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="500dp"
-
-        android:layout_height="200dp">
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imv"
-            android:layout_width="300dp"
-            android:layout_height="194dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/Circular"
-            android:src="@drawable/oyun" />
-    </LinearLayout>
-
-    <!-- Like Buttons in a horizontal LinearLayout for the first post -->
-    <LinearLayout
+    <!-- Button to post thoughts -->
+    <Button
+        android:id="@+id/postButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:text="Post"
+        android:layout_gravity="end"
+        android:layout_marginBottom="16dp"/>
 
-        <ImageView
-            android:id="@+id/likeButton"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_thumb_up_24"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <!-- Second Like Button -->
-        <ImageView
-            android:id="@+id/likeButton2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_favorite_24"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <!-- Third Like Button -->
-        <ImageView
-            android:id="@+id/likeButton3"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_filter_vintage_24"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <!-- Fourth Like Button -->
-        <ImageView
-            android:id="@+id/likeButton4"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_thumb_down_24"
-            tools:ignore="TouchTargetSizeCheck" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="290dp"
-        android:layout_height="52dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/purple_200"
-        android:text="THOUGHTS ABOUT YOUR GAME"
-        android:textColor="#000000"
-        android:textSize="15dp"
-        tools:ignore="TextSizeCheck" />
-
+    <!-- Layout to display posts -->
     <LinearLayout
+        android:id="@+id/postsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"/>
 
-        <!-- User2's Image -->
-        <ImageView
-            android:id="@+id/user2ImageView"
+
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:layout_marginTop="15dp"
+        >
+
+        <ImageButton
+            android:id="@+id/homeButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="8dp"
-            tools:srcCompat="@tools:sample/avatars"             android:contentDescription="User2's Image"/>
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:src="@drawable/home"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="  user2"
-            android:textSize="15dp"
-            tools:ignore="TextSizeCheck" />
+        <ImageButton
+            android:id="@+id/addIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:src="@drawable/add"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/gameButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:src="@drawable/game"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <!-- Image View for the second post image -->
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imv1"
-        android:layout_width="300dp"
-        android:layout_height="194dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="5dp"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/Circular"
-        android:src="@drawable/oyun" />
-
-    <!-- Like Buttons in a horizontal LinearLayout for the second post -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
-
-        <!-- Fifth Like Button -->
-        <ImageView
-            android:id="@+id/likeButton5"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_thumb_up_24"
-            tools:ignore="TouchTargetSizeCheck" />
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:src="@drawable/logo"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
-        <!-- Sixth Like Button -->
-        <ImageView
-            android:id="@+id/likeButton6"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_favorite_24"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <!-- Seventh Like Button -->
-        <ImageView
-            android:id="@+id/likeButton7"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_filter_vintage_24"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <!-- Eighth Like Button -->
-        <ImageView
-            android:id="@+id/likeButton8"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:contentDescription="Like Button"
-            android:onClick="yourOnClickMethod"
-            android:src="@drawable/baseline_thumb_down_24"
-            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/likeCountText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="12sp"
-        android:textColor="#000000"
-        android:layout_marginLeft="8dp"/>
-
-</LinearLayout>
+    </LinearLayout>

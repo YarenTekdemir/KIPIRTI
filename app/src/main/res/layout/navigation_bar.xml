@@ -1,31 +1,49 @@
 <!-- navigation_bar.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="35dp"
     android:orientation="horizontal"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/black">
 
-    <Button
+
+    <ImageButton
         android:id="@+id/homeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textColor="#FFFFFF"
-        android:layout_weight="1" />
-    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:src="@drawable/home"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:background="@color/black"/>
+
+    <ImageButton
+        android:id="@+id/addIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:src="@drawable/add"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:contentDescription="TODO"
+        android:background="@color/black"/>
+
+    <ImageButton
         android:id="@+id/gameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Game "
-        android:textColor="#FFFFFF"
-        android:layout_weight="1" />
-    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:src="@drawable/game"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:background="@color/black"/>
+
+    <ImageButton
         android:id="@+id/profileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textColor="#FFFFFF"
-        android:layout_weight="1" />
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:src="@drawable/logo"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:background="@color/black"/>
+
 
 
 </LinearLayout>
