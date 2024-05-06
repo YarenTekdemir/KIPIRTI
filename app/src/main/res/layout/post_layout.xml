@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- User Info Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start">
+
+        <ImageView
+            android:id="@+id/userImageView"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/oyun"
+            android:contentDescription="User Image"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/postContentTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post content goes here"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/customborder"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/likeButton1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Like Button"
+            android:src="@drawable/baseline_thumb_up_24" />
+
+        <TextView
+            android:id="@+id/likeCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"/>
+
+        <ImageView
+            android:id="@+id/likeButton2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Like Button"
+            android:src="@drawable/baseline_thumb_down_24" />
+
+
+        <TextView
+            android:id="@+id/dislikeCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"/>
+
+
+    </LinearLayout>
+    <!-- For simplicity, we'll assume like buttons are already defined in this layout -->
+</LinearLayout>
