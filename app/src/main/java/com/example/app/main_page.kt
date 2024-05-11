@@ -79,9 +79,10 @@ class main_page : AppCompatActivity() {
         updateLikeCount(likeCountTextView)
         updateDislikeCount(dislikeCountTextView)
 
-        // Add the post layout to the postsContainer
-        postsContainer.addView(postLayout)
+        // Add the post layout to the postsContainer at the beginning
+        postsContainer.addView(postLayout, 0)
     }
+
 
     private fun toggleLikeButtonState(likeButton: ImageView, likeCountTextView: TextView) {
         likeButtonActive = !likeButtonActive

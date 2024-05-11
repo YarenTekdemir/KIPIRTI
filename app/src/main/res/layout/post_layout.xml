@@ -55,7 +55,7 @@
             android:id="@+id/likeButton1"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="6dp"
             android:contentDescription="Like Button"
             android:src="@drawable/baseline_thumb_up_24" />
 
@@ -65,6 +65,7 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textSize="16sp"
+            android:layout_marginEnd="15dp"
             android:textColor="@android:color/black"
             android:layout_marginTop="8dp"/>
 

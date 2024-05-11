@@ -3,6 +3,10 @@
 
     <string name="ok_button_description">OK Button</string>
     <string name="sort_prompt">Select sorting option</string>
+    <string name="home_icon_description">Home</string>
+    <string name="add_icon_description">New Post</string>
+    <string name="game_icon_description">Game</string>
+    <string name="profile_icon_description">Profile</string>
 
     <string-array name="security_questions">
         <item>What was the name of your first pet?</item>

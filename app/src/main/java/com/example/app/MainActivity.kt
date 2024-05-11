@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             if (username == savedUsername && password == savedPassword) {
                 // Successful login, navigate to the profile page
                 Toast.makeText(this@MainActivity, "Login successful", Toast.LENGTH_SHORT).show()
-                val intent = Intent(applicationContext, main_page::class.java)
+                val intent = Intent(applicationContext, voice::class.java)
                 startActivity(intent)
             } else {
                 // Invalid credentials, show a toast message
