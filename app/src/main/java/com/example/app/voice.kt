@@ -1,5 +1,4 @@
 package com.example.app
-import kotlin.math.min
 
 import android.Manifest
 import android.content.DialogInterface
@@ -10,17 +9,23 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
+import kotlin.math.min
 
-class voice : AppCompatActivity() {
+class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private lateinit var sentenceTextView: TextView
     private lateinit var checkButton: Button
+    private lateinit var volumeIcon: ImageView
+    private lateinit var textToSpeech: TextToSpeech
     private lateinit var speechRecognizer: SpeechRecognizer
     private lateinit var correctSound: MediaPlayer
     private lateinit var incorrectSound: MediaPlayer
@@ -32,16 +37,21 @@ class voice : AppCompatActivity() {
     )
     private var currentIndex = 0
 
+    private var isSpeaking: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.voice)
 
         sentenceTextView = findViewById(R.id.sentenceTextView)
         checkButton = findViewById(R.id.checkButton)
+        volumeIcon = findViewById(R.id.volume_icon)
         correctSound = MediaPlayer.create(this, R.raw.correct_sound)
         incorrectSound = MediaPlayer.create(this, R.raw.incorrect_sound)
 
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+
+        textToSpeech = TextToSpeech(this, this)
 
         showNextSentence()
 
@@ -50,6 +60,14 @@ class voice : AppCompatActivity() {
                 startSpeechRecognition()
             } else {
                 requestPermission()
+            }
+        }
+
+        volumeIcon.setOnClickListener {
+            if (isSpeaking) {
+                stopSpeaking()
+            } else {
+                startSpeaking()
             }
         }
     }
@@ -84,6 +102,7 @@ class voice : AppCompatActivity() {
                 // Handle the error appropriately, e.g., display a message to the user
                 Toast.makeText(this@voice, "Error: $errorMessage", Toast.LENGTH_SHORT).show()
             }
+
             // Function to calculate Levenshtein distance between two strings
             fun levenshteinDistance(s1: String, s2: String): Int {
                 val dp = Array(s1.length + 1) { IntArray(s2.length + 1) { 0 } }
@@ -126,10 +145,10 @@ class voice : AppCompatActivity() {
                         showConfirmationDialog()
                     } else {
                         incorrectSound.start() // Play incorrect sound
+                        tryagain()
                     }
                 }
             }
-
 
             override fun onPartialResults(partialResults: Bundle?) {}
             override fun onEvent(eventType: Int, params: Bundle?) {}
@@ -148,7 +167,6 @@ class voice : AppCompatActivity() {
         }
     }
 
-
     private fun showConfirmationDialog() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Continue?")
@@ -157,7 +175,22 @@ class voice : AppCompatActivity() {
             showNextSentence()
         }
         builder.setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
-            // Handle what to do when the user chooses not to continue
+            val intent = Intent(this@voice, main_page::class.java)
+            startActivity(intent)
+        }
+        builder.show()
+    }
+
+    private fun tryagain() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Try Again?")
+        builder.setMessage("Do you want to try again so you can become better?")
+        builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+            currentIndex
+        }
+        builder.setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
+            val intent = Intent(this@voice, main_page::class.java)
+            startActivity(intent)
         }
         builder.show()
     }
@@ -181,9 +214,39 @@ class voice : AppCompatActivity() {
         }
     }
 
+    override fun onInit(status: Int) {
+        if (status == TextToSpeech.SUCCESS) {
+            val langResult = textToSpeech.isLanguageAvailable(Locale.ENGLISH)
+            if (langResult == TextToSpeech.LANG_AVAILABLE || langResult == TextToSpeech.LANG_COUNTRY_AVAILABLE) {
+                textToSpeech.language = Locale.ENGLISH
+            } else {
+                Toast.makeText(this, "English language not supported.", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(this, "Initialization failed.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+
+    private fun startSpeaking() {
+        val text = sentenceTextView.text.toString()
+        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
+        isSpeaking = true
+        volumeIcon.setImageResource(R.drawable.hear)
+    }
+
+    private fun stopSpeaking() {
+        textToSpeech.stop()
+        isSpeaking = false
+        volumeIcon.setImageResource(R.drawable.hear)
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         speechRecognizer.destroy()
+        textToSpeech.stop()
+        textToSpeech.shutdown()
 
         // Release media player resources if initialized
         correctSound.release()

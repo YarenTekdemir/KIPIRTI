@@ -4,23 +4,53 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
 
+    <!-- Title TextView -->
     <TextView
         android:id="@+id/sentenceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Click Check Then Talk:"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="15dp"
+        android:text="Sentences:"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/checkButton"
+    <!-- Instruction TextView -->
+    <TextView
+        android:id="@+id/instructionTextView"
         android:layout_width="wrap_content"
-        android:background="@drawable/rounded_corner"
         android:layout_height="wrap_content"
         android:layout_below="@id/sentenceTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Check" />
+        android:layout_marginTop="16dp"
+        android:text="Click 'Check' and then speak:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <!-- Check Button -->
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructionTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_rounded"
+        android:text="Check"
+        android:textColor="@android:color/white" />
+
+    <!-- Volume Icon -->
+    <ImageView
+        android:id="@+id/volume_icon"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/sentenceTextView"
+        android:src="@drawable/hear" />
+
+
 
 </RelativeLayout>
