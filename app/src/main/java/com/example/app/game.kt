@@ -31,22 +31,6 @@ class game  : AppCompatActivity() {
         )
 
 
-        // Set up OnRatingBarChangeListener for each RatingBar
-        binding.ratingBar1.setOnRatingBarChangeListener { _, rating, _ ->
-            showToast("Rating for game 1: $rating")
-        }
-
-        binding.ratingBar2.setOnRatingBarChangeListener { _, rating, _ ->
-            showToast("Rating for game 2: $rating")
-        }
-
-        binding.ratingBar3.setOnRatingBarChangeListener { _, rating, _ ->
-            showToast("Rating for game 3: $rating")
-        }
-
-        binding.ratingBar4.setOnRatingBarChangeListener { _, rating, _ ->
-            showToast("Rating for game 4: $rating")
-        }
 
         binding.daily.setOnClickListener {
             intent = Intent(applicationContext, daily_task::class.java)
@@ -54,16 +38,24 @@ class game  : AppCompatActivity() {
         }
         binding.imv1.setOnClickListener {
             binding.konfettiView.start(party)
+            intent = Intent(applicationContext, WordGuessGame::class.java)
+            startActivity(intent)
         }
          binding.imv2.setOnClickListener {
             binding.konfettiView.start(party)
+             intent = Intent(applicationContext, WordGuessGame::class.java)
+             startActivity(intent)
         }
          binding.imv3.setOnClickListener {
             binding.konfettiView.start(party)
+             intent = Intent(applicationContext, WordGuessGame::class.java)
+             startActivity(intent)
         }
 
          binding.imv4.setOnClickListener {
             binding.konfettiView.start(party)
+             intent = Intent(applicationContext, WordGuessGame::class.java)
+             startActivity(intent)
         }
 
          binding.okbtn1.setOnClickListener{

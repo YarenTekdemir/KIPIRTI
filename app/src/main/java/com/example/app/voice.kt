@@ -33,7 +33,28 @@ class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
     private val sentences = listOf(
         "I love oranges.",
         "The sky is blue.",
+        "She enjoys swimming in the ocean.",
+        "My sister plays the piano very well.",
+        "We live in a small town.",
+        "He always wakes up early.",
+        "They have a dog named Max.",
+        "I need to buy some milk.",
+        "Do you like watching movies?",
+        "The train arrives at 9 o'clock.",
+        "She wears glasses to read.",
+        "We eat dinner together every evening.",
+        "He rides his bike to work.",
+        "I forgot to bring my umbrella.",
+        "The flowers bloom in spring.",
+        "My favorite season is autumn.",
+        "They visit their grandparents every Sunday.",
+        "She works as a teacher.",
+        "I play basketball with my friends.",
+        "He takes the bus to school.",
+        "We go hiking in the mountains.",
+        "Can you help me with my homework?",
         "Today is a beautiful day."
+
     )
     private var currentIndex = 0
 
