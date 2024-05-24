@@ -20,7 +20,9 @@
             android:layout_height="wrap_content"
             android:text="Sign Up"
             android:textSize="35sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+
+            />
 
         <EditText
             android:id="@+id/editText4"
@@ -30,15 +32,20 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:hint="Nickname"
+            android:ems="10"
+            android:backgroundTint="#FF7043"
             android:inputType="text"
-            android:maxLines="1"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColor="#C2185B"/>
 
         <EditText
             android:id="@+id/editText3"
             android:layout_width="314dp"
             android:layout_height="wrap_content"
             android:ems="15"
+            android:textColor="#D32F2F"
+            android:backgroundTint="#FF7043"
+
             android:hint="Username"
             android:inputType="text"
             android:minHeight="48dp"
@@ -49,6 +56,8 @@
             android:layout_width="314dp"
             android:layout_height="wrap_content"
             android:ems="5"
+            android:backgroundTint="#FF7043"
+
             android:hint="Enter your password"
             android:inputType="textPassword"
             android:minHeight="48dp"
@@ -58,6 +67,8 @@
         <EditText
             android:id="@+id/editTextTextPassword2"
             android:layout_width="314dp"
+            android:backgroundTint="#FF7043"
+
             android:layout_height="wrap_content"
             android:ems="5"
             android:hint="Confirm your password"
@@ -71,6 +82,7 @@
             android:id="@+id/securityQuestionSpinner"
             android:layout_width="314dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FF7043"
             android:minHeight="48dp"
             android:layout_marginTop="20dp"/>
 
@@ -79,25 +91,29 @@
             android:layout_width="314dp"
             android:layout_height="wrap_content"
             android:hint="Security Answer"
+            android:backgroundTint="#FF7043"
             android:minHeight="48dp"
             android:layout_marginTop="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="20dp">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/saveButton"
-                android:layout_width="300dp"
-                android:layout_height="55dp"
+                android:layout_width="318dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/instructionTextView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
                 android:background="@drawable/button_rounded"
-                android:minHeight="48dp"
+                android:backgroundTint="#FF7043"
                 android:text="Save"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="10dp"/>
+                tools:ignore="TouchTargetSizeCheck" />
 
 
         </LinearLayout>
@@ -124,7 +140,7 @@
             android:layout_height="25dp"
             android:background="@android:color/transparent"
             android:text="Sign in"
-            android:textColor="#FF180F"
+            android:textColor="#FF7043"
             android:textSize="12sp"
             android:textStyle="normal"
             android:visibility="visible"

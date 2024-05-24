@@ -1,5 +1,6 @@
 package com.example.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -20,6 +21,12 @@ class Chat : AppCompatActivity() {
         binding = ChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
+        binding.chatsbutton.setOnClickListener {
+            intent = Intent(applicationContext, game::class.java)
+            startActivity(intent)
+        }
         // Initialize views
         sendButton = findViewById(R.id.sendButton)
         messageInput = findViewById(R.id.messageInput)

@@ -9,7 +9,6 @@ object DailyTaskRepository {
         DailyTask("Find the hidden treasure", "Search for the hidden treasure in the Pirate's Cove!", R.drawable.game1),
         DailyTask("Find the hidden ", " for the hidden treasure in the anan's Cove!", R.drawable.game2),
         DailyTask("Complete the magic spell", "Learn and complete the magic spell in the Wizard's Tower!", R.drawable.trophy_image1)
-        // Add more daily tasks as needed
     )
 
     fun getDailyTask(): DailyTask {

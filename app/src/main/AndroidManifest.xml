@@ -68,7 +68,7 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".ui.theme.hallof"
+            android:name=".hallof"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat" />

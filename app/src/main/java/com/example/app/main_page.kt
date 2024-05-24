@@ -1,6 +1,7 @@
 package com.example.app
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -25,6 +26,23 @@ class main_page : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = MainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.homeButton.setOnClickListener {
+            intent = Intent(applicationContext, main_page::class.java)
+            startActivity(intent)
+        }
+
+        binding.profileButton.setOnClickListener {
+            intent = Intent(applicationContext, profile_page_2::class.java)
+            startActivity(intent)        }
+
+        binding.gameButton.setOnClickListener {
+            intent = Intent(applicationContext, game::class.java)
+            startActivity(intent)        }
+
+        binding.hearButton.setOnClickListener {
+            intent = Intent(applicationContext, voice::class.java)
+            startActivity(intent)        }
 
         val thoughtInput = binding.thoughtInput
         val postButton = binding.postButton

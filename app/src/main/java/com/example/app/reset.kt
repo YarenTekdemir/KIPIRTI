@@ -1,6 +1,7 @@
 package com.example.app
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -19,6 +20,10 @@ class reset : AppCompatActivity() {
         binding = ResetpswdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.okbtn1.setOnClickListener {
+            intent = Intent(applicationContext, profile_page::class.java)
+            startActivity(intent)
+        }
         // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 

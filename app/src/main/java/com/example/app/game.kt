@@ -48,20 +48,34 @@ class game  : AppCompatActivity() {
         }
          binding.imv3.setOnClickListener {
             binding.konfettiView.start(party)
-             intent = Intent(applicationContext, WordGuessGame::class.java)
+             intent = Intent(applicationContext, Chat::class.java)
              startActivity(intent)
         }
 
          binding.imv4.setOnClickListener {
             binding.konfettiView.start(party)
-             intent = Intent(applicationContext, WordGuessGame::class.java)
+             intent = Intent(applicationContext, hallof::class.java)
              startActivity(intent)
         }
-
-         binding.okbtn1.setOnClickListener{
-             intent = Intent(applicationContext, profile_page::class.java )
+         binding.homeButton.setOnClickListener {
+             intent = Intent(applicationContext, main_page::class.java)
              startActivity(intent)
          }
+
+         binding.profileButton.setOnClickListener {
+             intent = Intent(applicationContext, profile_page_2::class.java)
+             startActivity(intent)        }
+
+         binding.gameButton.setOnClickListener {
+             intent = Intent(applicationContext, game::class.java)
+             startActivity(intent)        }
+
+         binding.hearButton.setOnClickListener {
+             intent = Intent(applicationContext, voice::class.java)
+             startActivity(intent)        }
+
+
+
      }
 
     private fun showToast(message: String) {

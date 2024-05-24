@@ -6,24 +6,23 @@
         android:radius="40dp" />
 
     <gradient
-        android:angle="135"
-        android:centerX="0.5"
-        android:centerY="0.5"
-        android:endColor="#01f1fa"
-        android:gradientRadius="50"
-        android:startColor="#0189ff"
-        android:type="linear" />
+        android:startColor="#FFEBEE"
+        android:centerColor="#FFCDD2"
+        android:endColor="#FFE0B2"
+        android:angle="90"
+        android:type="linear"
+        android:useLevel="false"/>
 
 
 
     <size
-        android:width="20dp"
+        android:width="70dp"
         android:height="40dp" />
 
     <!--Use android:dashWidth="2dp" and android:dashGap="2dp"
     to add dashes to your stroke-->
     <stroke
-        android:width="2dp"
+        android:width="4dp"
         android:color="#FFFFFF" />
 
     <padding

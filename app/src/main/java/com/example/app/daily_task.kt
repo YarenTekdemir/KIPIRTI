@@ -13,6 +13,10 @@ class daily_task : AppCompatActivity() {
         binding = DailyTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+         binding.dailysbutton.setOnClickListener{
+             intent = Intent(applicationContext, game::class.java)
+             startActivity(intent)
+         }
         // Assuming you have daily task data
         val dailyTask = DailyTask("Defeat the dragon", "Defeat the dragon in the Forbidden Forest!", R.drawable.oyun)
 
@@ -25,8 +29,8 @@ class daily_task : AppCompatActivity() {
 
         // Button click listener to navigate to the game page
         binding.startTaskButton.setOnClickListener {
-            // Navigate to the game page DİREKT OYUNA BAĞLA APİYLE
-            intent = Intent(applicationContext, game::class.java )
+            // Navigate to the game page
+            intent = Intent(applicationContext, WordGuessGame::class.java )
             startActivity(intent)
         }
     }

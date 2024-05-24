@@ -48,6 +48,13 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    sourceSets {
+        getByName("main") {
+            assets {
+                srcDirs("src\\main\\assets", "src\\main\\assets")
+            }
+        }
+    }
 }
 
 dependencies {
@@ -69,4 +76,11 @@ dependencies {
     implementation("com.github.jinatonic.confetti:confetti:1.1.2")
     implementation("nl.dionsegijn:konfetti-compose:2.0.4")
     implementation("nl.dionsegijn:konfetti-xml:2.0.4")
+    implementation("com.airbnb.android:lottie:4.1.0")
+    implementation ("androidx.drawerlayout:drawerlayout:1.1.1")
+    implementation ("com.google.android.material:material:1.4.0")
+    implementation ("androidx.appcompat:appcompat:1.3.1")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.3.5")
+
 }

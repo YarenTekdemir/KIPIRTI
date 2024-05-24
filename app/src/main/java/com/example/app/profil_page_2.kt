@@ -16,6 +16,29 @@ class profile_page_2 : AppCompatActivity() {
         binding = ProfilePage2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.homeButton.setOnClickListener {
+            intent = Intent(applicationContext, main_page::class.java)
+            startActivity(intent)
+        }
+
+        binding.profileButton.setOnClickListener {
+            intent = Intent(applicationContext, profile_page_2::class.java)
+            startActivity(intent)        }
+
+        binding.gameButton.setOnClickListener {
+            intent = Intent(applicationContext, game::class.java)
+            startActivity(intent)        }
+
+        binding.hearButton.setOnClickListener {
+            intent = Intent(applicationContext, voice::class.java)
+            startActivity(intent)        }
+
+
+        binding.listIcon.setOnClickListener {
+            intent = Intent(applicationContext, profile_page::class.java)
+            startActivity(intent)        }
+
+
         // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 

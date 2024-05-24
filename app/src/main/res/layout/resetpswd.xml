@@ -7,49 +7,72 @@
     android:orientation="vertical"
     tools:context=".reset">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="Reset Password"
-        android:textSize="35sp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/okbtn1"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/left"
+            android:contentDescription="@string/ok_button_description"
+            android:onClick="buttonClick"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="48dp"
+            android:text="Reset Password"
+            android:textColor="#D32F2F"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <EditText
-
         android:id="@+id/editTextTextPassword1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="40dp"
-        android:ems="5"
+        android:ems="10"
+        android:backgroundTint="#FF7043"
         android:hint="Enter your new password"
         android:inputType="textPassword"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFAB43 "/>
 
     <EditText
         android:id="@+id/editTextTextPassword2"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
-        android:ems="5"
+        android:ems="10"
+        android:backgroundTint="#FF7043"
         android:hint="Confirm your new password"
         android:inputType="textPassword"
-        android:minHeight="48dp" />
-    <!-- Security Question Dropdown -->
+        android:minHeight="48dp"
+        android:textColor="#C2185B"/>
+
     <Spinner
         android:id="@+id/securityQuestionSpinner"
-        android:layout_width="331dp"
+        android:layout_width="293dp"
         android:layout_height="wrap_content"
-
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#FF7043"
         android:minHeight="48dp" />
 
     <EditText
@@ -59,19 +82,22 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
-        android:ems="5"
+        android:ems="10"
+        android:backgroundTint="#FF7043"
         android:hint="Answer your security question"
         android:inputType="text"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#C2185B"/>
 
     <Button
         android:id="@+id/button_reset_password"
-        android:layout_width="match_parent"
+        android:layout_width="333dp"
+        android:layout_marginTop="15mm"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_gravity="center"
         android:background="@drawable/button_rounded"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="40dp"
+        android:backgroundTint="#FF7043"
+        android:textColor="#FFFFFF"
         android:text="Reset My Password" />
 
 </LinearLayout>

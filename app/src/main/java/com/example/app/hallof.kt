@@ -1,16 +1,26 @@
-package com.example.app.ui.theme
+package com.example.app
 
+import android.content.Intent
 import android.widget.TextView
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.app.R
+import com.example.app.databinding.HallofBinding
+import com.example.app.databinding.ProfilePageBinding
 import kotlin.collections.ArrayList
 
 class hallof : AppCompatActivity() {
+    lateinit var binding: HallofBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.hallof)
+        binding = HallofBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        binding.halloffamebutton.setOnClickListener{
+            intent = Intent(applicationContext, daily_task::class.java )
+            startActivity(intent)
+        }
 
         // Simulate player data
         val playerData = ArrayList<Player>()

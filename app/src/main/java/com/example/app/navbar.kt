@@ -1,5 +1,6 @@
 package com.example.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -16,24 +17,24 @@ class navbar : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.homeButton.setOnClickListener {
-            Log.d("Navbar", "Home button clicked") // Add this line for debugging
-            showToast("Home Button Clicked")
+            intent = Intent(applicationContext, main_page::class.java)
+            startActivity(intent)
         }
 
         binding.profileButton.setOnClickListener {
-            showToast("Profile Button Clicked")
-        }
+            intent = Intent(applicationContext, profile_page::class.java)
+            startActivity(intent)        }
 
         binding.gameButton.setOnClickListener {
-            showToast("Game Button Clicked")
-        }
+            intent = Intent(applicationContext, game::class.java)
+            startActivity(intent)        }
 
         binding.addIcon.setOnClickListener {
-            showToast("Add Button Clicked")
-        }
-    }
+            intent = Intent(applicationContext, voice::class.java)
+            startActivity(intent)         }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+
+
+

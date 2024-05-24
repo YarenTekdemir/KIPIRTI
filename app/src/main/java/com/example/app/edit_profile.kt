@@ -1,6 +1,7 @@
 package com.example.app
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -14,14 +15,16 @@ class edit_profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = EditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        binding.okbtn1.setOnClickListener{
+            intent = Intent(applicationContext, profile_page::class.java )
+            startActivity(intent)
+        }
         // Accessing views from the layout
         val editTextNickname = binding.editTextNickname
         val editTextUsername = binding.editTextUsername
         val addbio = binding.addbio
         val addfavword = binding.addfavword
         val buttonUpdate = binding.buttonUpdate
-        val cancelbutton =binding.cancelbutton
 
         // Load user's existing profile information if available
         loadUserProfile()
@@ -35,24 +38,7 @@ class edit_profile : AppCompatActivity() {
                 addfavword.text.toString()
             )
         }
-        cancelbutton.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Cancel Changes")
-                .setMessage("Are you sure you want to cancel your changes?")
-                .setPositiveButton("Yes") { _, _ ->
-                    // Reset form fields or perform other actions here
-                    editTextNickname.text.clear()
-                    editTextUsername.text.clear()
-                    addbio.text.clear()
-                    addfavword.text.clear()
-                }
-                .setNegativeButton("No", null)
-                .show()
-        }
-
-
-
-    }
+            }
 
     private fun loadUserProfile() {
         // Get reference to SharedPreferences
@@ -88,8 +74,5 @@ class edit_profile : AppCompatActivity() {
         // Show a toast message indicating successful update
         Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show()
     }
-
-
-
 
 }

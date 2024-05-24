@@ -5,261 +5,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient">
+    tools:context=".MainActivity">
 
-    <!-- Settings headline and icon -->
     <LinearLayout
-        android:id="@+id/settingsLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/settings_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="40dp"
-            android:src="@drawable/baseline_brightness_5_24" />
-
-        <TextView
-            android:id="@+id/settings_headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="24sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:layout_marginStart="8dp"/>
-
-    </LinearLayout>
-
-
-
-
-    <LinearLayout
-        android:layout_width="390dp"
-        android:layout_height="609dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="92dp"
-        android:background="@drawable/rounded_background"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/background_gradient"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-
+        <!-- Settings headline and icon -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="0dp"
+            <ImageButton
+                android:id="@+id/settingsbutton"
+                android:layout_width="56dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_marginEnd="1dp"
+                android:background="@drawable/left"
+                android:contentDescription="@string/ok_button_description"
+                android:onClick="buttonClick"
+                tools:ignore="TouchTargetSizeCheck" />
 
-                <TextView
-                    android:id="@+id/chatText1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:text="Chat"
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/okbtn2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/baseline_chevron_right_24"
-                    android:contentDescription="@string/ok_button_description"
-                    android:onClick="buttonClick"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-            </RelativeLayout>
-        </LinearLayout>
-
-        <!-- Change Password -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                tools:ignore="ExtraText">
-
-                <TextView
-                    android:id="@+id/mygames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:text="My Games"
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/okbtn4"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/baseline_chevron_right_24"
-                    android:contentDescription="@string/ok_button_description"
-                    android:onClick="buttonClick"
-                    tools:ignore="TouchTargetSizeCheck" />
-                />
-
-
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/settings_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="78dp"
+                android:text="Settings"
+                android:textColor="#D32F2F"
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            >
+            android:id="@+id/white"
+            android:layout_width="wrap_content"
+            android:layout_height="589dp"
+            android:layout_marginTop="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_background"
+            android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="0dp"
-
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                tools:ignore="ExtraText">
-
-                <TextView
-                    android:id="@+id/achivements"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:text="My Achivements"
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/okbtn5"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/baseline_chevron_right_24"
-                    android:contentDescription="@string/ok_button_description"
-                    android:onClick="buttonClick"
-                    tools:ignore="TouchTargetSizeCheck" />
-                />
-            </RelativeLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                tools:ignore="ExtraText">
-
-
-                <TextView
-                    android:id="@+id/mygames12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:text="My Profile "
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/mypagebtn"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/baseline_chevron_right_24"
-                    android:contentDescription="@string/ok_button_description"
-                    android:onClick="buttonClick"
-
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                />
-
-
-            </RelativeLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                tools:ignore="ExtraText">
-
-
-                <TextView
-                    android:id="@+id/hallof"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:text="Hall of Fame "
-                    android:textSize="16sp" />
-
-                <ImageButton
-                    android:id="@+id/hallof1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="1dp"
-                    android:background="@drawable/baseline_chevron_right_24"
-                    android:contentDescription="@string/ok_button_description"
-                    android:onClick="buttonClick"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                />
-
-
-            </RelativeLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="MissingConstraints">
-
-
-            <!-- Edit Profile -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-            >
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -285,19 +84,15 @@
                         android:contentDescription="@string/ok_button_description"
                         android:onClick="buttonClick"
                         tools:ignore="TouchTargetSizeCheck" />
-
                 </RelativeLayout>
             </LinearLayout>
-
-            <!-- Chat -->
 
             <!-- Change Password -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-               >
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -314,27 +109,91 @@
                         android:textSize="16sp" />
 
                     <ImageButton
-                        android:id="@+id/okbtn3"
+                        android:id="@+id/okbtn2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="1dp"
                         android:background="@drawable/baseline_chevron_right_24"
-                        android:onClick="buttonClick"
                         android:contentDescription="@string/ok_button_description"
+                        android:onClick="buttonClick"
                         tools:ignore="TouchTargetSizeCheck" />
-
                 </RelativeLayout>
             </LinearLayout>
-            <!-- Change Password -->
 
-        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-               >
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/dailytask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:text="Daily Task"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/dailytaskbtn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="1dp"
+                        android:background="@drawable/baseline_chevron_right_24"
+                        android:contentDescription="@string/ok_button_description"
+                        android:onClick="buttonClick"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/achivements"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+
+                        android:layout_marginStart="16dp"
+                        android:text="My Achivements"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/achivementsbtn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="1dp"
+                        android:background="@drawable/baseline_chevron_right_24"
+                        android:contentDescription="@string/ok_button_description"
+                        android:onClick="buttonClick"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- FAQ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -357,23 +216,49 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="1dp"
                         android:background="@drawable/baseline_chevron_right_24"
-                        android:onClick="buttonClick"
                         android:contentDescription="@string/ok_button_description"
-                        tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+                        android:onClick="buttonClick"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </RelativeLayout>
+            </LinearLayout>
+            <!-- FAQ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/sendfeedback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:text="Send Feedback"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/sendfeedbackbtn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="1dp"
+                        android:background="@drawable/baseline_chevron_right_24"
+                        android:contentDescription="@string/ok_button_description"
+                        android:onClick="buttonClick"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </RelativeLayout>
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"/>
-
         </LinearLayout>
 
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 

@@ -1,30 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
 
-    <!-- Title TextView -->
-    <TextView
-        android:id="@+id/sentenceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="15dp"
-        android:text="Sentences:"
-        android:textColor="@android:color/black"
-        android:textSize="24sp" />
+    <!-- Title and Volume Icon in a LinearLayout -->
 
-    <!-- Instruction TextView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient"
+        tools:ignore="SpeakableTextPresentCheck"></ScrollView>
+
+    <LinearLayout
+            android:layout_width="268dp"
+            android:layout_height="173dp"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bubble_background"
+            android:orientation="horizontal">
+
+            <!-- Title TextView -->
+            <TextView
+                android:id="@+id/sentenceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sentences:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <!-- Volume Icon -->
+            <ImageView
+                android:id="@+id/volume_icon"
+                android:layout_width="33dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/hear" />
+            <!-- Instruction TextView -->
+        </LinearLayout>
+
     <TextView
         android:id="@+id/instructionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sentenceTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Click 'Check' and then speak:"
+        android:layout_marginTop="350dp"
+        android:text="Click 'Check' and Speak:"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
@@ -35,21 +58,129 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/instructionTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/button_rounded"
         android:text="Check"
-        android:textColor="@android:color/white" />
+        android:backgroundTint="#FF7043"
+        android:textColor="#FFFFFF" />
 
-    <!-- Volume Icon -->
-    <ImageView
-        android:id="@+id/volume_icon"
-        android:layout_width="33dp"
-        android:layout_height="34dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="15dp"
-        android:layout_toStartOf="@+id/sentenceTextView"
-        android:src="@drawable/hear" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="127dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anime1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView2"
+        android:layout_width="127dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anime2" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView3"
+        android:layout_width="127dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anime3" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView4"
+        android:layout_width="127dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anime4" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView5"
+        android:layout_width="127dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/anime5" />
+
+    <!-- Navigation bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavbar"
+        android:layout_width="397mm"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <!-- ImageButtons for navigation items -->
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/home_icon_description"
+
+            android:src="@drawable/home"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/hearButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#E6603B   "
+            android:contentDescription="@string/add_icon_description"
+            android:src="@drawable/hear"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <ImageButton
+            android:id="@+id/gameButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/game_icon_description"
+            android:src="@drawable/game"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/profile_icon_description"
+            android:src="@drawable/logo"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </LinearLayout>
 
 
 

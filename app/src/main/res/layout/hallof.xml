@@ -4,24 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/background_gradient">
+    >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Hall of Fame"
-        android:textSize="35sp"
-        android:textStyle="bold" />
-    <!-- RecyclerView for displaying player items -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        tools:listitem="@layout/halloflist" />
+        android:layout_height="744dp"
+        android:background="@drawable/background_gradient"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/halloffamebutton"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
+                android:background="@drawable/left"
+                android:contentDescription="@string/ok_button_description"
+                android:onClick="buttonClick"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/settings_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:text="Hall of Fame "
+                android:textColor="#D32F2F"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <!-- Delete button -->
+
+
+        <!-- RecyclerView for displaying player items -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="533dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            tools:listitem="@layout/halloflist" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

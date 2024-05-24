@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <!-- Chat messages area -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/deleteButton"
-        android:background="@color/constarintColor"
+        android:layout_height="0dp"
+        android:layout_above="@+id/inputLayout"
+        android:layout_alignParentTop="true"
         android:contentDescription="Chat messages area"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@drawable/background_gradient">
 
         <LinearLayout
             android:id="@+id/messageContainer"
@@ -20,7 +23,34 @@
             android:orientation="vertical" />
 
     </ScrollView>
+    <!-- Settings headline and icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <ImageButton
+            android:id="@+id/chatsbutton"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/left"
+            android:contentDescription="@string/ok_button_description"
+            android:onClick="buttonClick"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/settings_headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="78dp"
+            android:text="Chat With Me "
+            android:textColor="#D32F2F"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
     <!-- Delete button -->
     <Button
         android:id="@+id/deleteButton"
@@ -32,6 +62,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="#FF7043"
+        android:textColor="#FFFFFF"
         android:text="Delete All" />
 
     <!-- Input layout for sending messages -->
@@ -41,7 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/deleteButton"
         android:background="@color/white"
-        android:padding="8dp">
+        android:padding="8dp"
+        tools:ignore="ExtraText">
 
         <!-- Message input field -->
         <EditText
@@ -50,13 +84,14 @@
             android:layout_height="wrap_content"
             android:layout_toStartOf="@+id/sendButton"
             android:layout_toLeftOf="@+id/sendButton"
-            android:background="@color/kenar"
+            android:backgroundTint="#FF7043"
             android:hint="Type a message"
             android:inputType="textMultiLine"
             android:maxLines="5"
             android:minHeight="48dp"
             android:minLines="1"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:textColor="#C2185B" />
 
         <!-- Send button -->
         <Button
@@ -70,8 +105,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:backgroundTint="@color/purple_200"
+            android:background="@drawable/button_rounded"
+            android:backgroundTint="#FF7043"
+            android:textColor="#FFFFFF"
             android:text="Send" />
 
     </RelativeLayout>
+
 </RelativeLayout>

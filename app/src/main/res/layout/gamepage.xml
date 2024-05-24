@@ -1,100 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background_gradient">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <nl.dionsegijn.konfetti.xml.KonfettiView
         android:id="@+id/konfettiView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
         android:orientation="vertical"
->
+        android:background="@drawable/background_gradient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            >
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-
-            <ImageButton
-                android:id="@+id/okbtn1"
-                android:layout_width="56dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="1dp"
-                android:background="@drawable/left"
-                android:contentDescription="@string/ok_button_description"
-                android:onClick="buttonClick"
-
-                />
 
             <TextView
                 android:id="@+id/headlineTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="85dp"
+                android:layout_marginStart="125dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="GAME PAGE"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/list_icon"
-                android:layout_width="44dp"
-                android:layout_height="37dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="7dp"
-                android:src="@drawable/list" />
         </LinearLayout>
-
 
         <!-- First Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
             android:gravity="center"
-            android:orientation="horizontal"
-
-            >
-
+            android:orientation="horizontal">
 
             <!-- First Image and Description -->
-
-            <!-- Add space between the images -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-
-                >
-
+                android:orientation="vertical">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/imv1"
                     android:layout_width="143dp"
                     android:layout_height="102dp"
-                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/customborder"
                     android:scaleType="centerCrop"
@@ -107,9 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Your description goes here."
-                    android:textSize="16sp"
-                    />
-
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View
@@ -128,12 +99,10 @@
                     android:id="@+id/imv2"
                     android:layout_width="150dp"
                     android:layout_height="102dp"
-                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="5dp"
                     android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/Circular"
-                    android:src="@drawable/game2" />
-
+                    android:src="@drawable/game2"
+                    app:shapeAppearanceOverlay="@style/Circular" />
 
                 <TextView
                     android:id="@+id/descriptionTextView2"
@@ -142,8 +111,6 @@
                     android:layout_marginTop="8dp"
                     android:text="Your description goes here."
                     android:textSize="16sp" />
-
-
             </LinearLayout>
         </LinearLayout>
 
@@ -151,9 +118,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -169,25 +136,20 @@
                     android:id="@+id/imv3"
                     android:layout_width="150dp"
                     android:layout_height="102dp"
-                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="5dp"
                     android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/Circular"
-                    android:src="@drawable/game3" />
-
-
+                    android:src="@drawable/game3"
+                    app:shapeAppearanceOverlay="@style/Circular" />
 
                 <TextView
                     android:id="@+id/descriptionTextView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Your description goes here."
+                    android:text="Chat With Me"
                     android:textSize="16sp" />
-
             </LinearLayout>
 
-            <!-- Add space between the images -->
             <View
                 android:layout_width="15dp"
                 android:layout_height="match_parent" />
@@ -204,22 +166,18 @@
                     android:id="@+id/imv4"
                     android:layout_width="150dp"
                     android:layout_height="102dp"
-                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="5dp"
                     android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/Circular"
-                    android:src="@drawable/oyun" />
-
-
+                    android:src="@drawable/oyun"
+                    app:shapeAppearanceOverlay="@style/Circular" />
 
                 <TextView
                     android:id="@+id/descriptionTextView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Your description goes here."
+                    android:text="LeaderBoard"
                     android:textSize="16sp" />
-
             </LinearLayout>
         </LinearLayout>
 
@@ -227,9 +185,9 @@
         <LinearLayout
             android:layout_width="328dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -237,7 +195,6 @@
             <LinearLayout
                 android:layout_width="186dp"
                 android:layout_height="102dp"
-                android:layout_marginLeft="19dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -247,37 +204,76 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
                     android:gravity="center"
-                    android:text="Did you do your daily task?" /> <!-- Center align the text -->
-
-
+                    android:text="Did you do your daily task?" />
             </LinearLayout>
-
 
             <!-- Sixth Image and Description -->
             <LinearLayout
                 android:layout_width="120dp"
-                android:layout_marginRight="30dp"
-                android:layout_height="102dp">
+                android:layout_height="102dp"
+                android:layout_marginEnd="30dp">
 
                 <Button
                     android:id="@+id/daily"
                     android:background="@drawable/customborder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="27dp"
                     android:text="Daily Task" />
-
-
             </LinearLayout>
         </LinearLayout>
-        </LinearLayout>
+    </LinearLayout>
 
+    <!-- Navigation bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <!-- ImageButtons for navigation items -->
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/home_icon_description"
+            android:src="@drawable/home"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <!-- Fourth Row -->
+        <ImageButton
+            android:id="@+id/hearButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/add_icon_description"
+            android:src="@drawable/hear"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <!-- Add more rows as needed -->
+        <ImageButton
+            android:id="@+id/gameButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#E6603B   "
+            android:contentDescription="@string/game_icon_description"
+            android:src="@drawable/game"
+            tools:ignore="TouchTargetSizeCheck" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/profile_icon_description"
+            android:src="@drawable/logo"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

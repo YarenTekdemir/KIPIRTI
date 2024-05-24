@@ -30,6 +30,16 @@ class account : AppCompatActivity() {
         // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
+        // Initialize the security question spinner
+        val securityQuestions = arrayOf(
+            "What was the name of your first pet?",
+            "In which city were you born?",
+            "What is your favorite movie/book/TV show?"
+        )
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, securityQuestions)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        securityQuestionSpinner.adapter = adapter
+
         // Check if the user has already registered
         val isRegistered = sharedPreferences.getBoolean("isRegistered", false)
         if (isRegistered) {
@@ -42,25 +52,19 @@ class account : AppCompatActivity() {
             val securityAnswer = sharedPreferences.getString("SecurityAnswer", "")
 
             // Set retrieved profile information to the respective views
-            nicknameEditText.setText(nickname)
-            usernameEditText.setText(username)
-            passwordEditText1.setText(password1)
-            passwordEditText2.setText(password2)
+            nicknameEditText.setText(nickname ?: "")
+            usernameEditText.setText(username ?: "")
+            passwordEditText1.setText(password1 ?: "")
+            passwordEditText2.setText(password2 ?: "")
 
             // Set the selected security question in the spinner
-            val securityQuestions = arrayOf(
-                "What was the name of your first pet?",
-                "In which city were you born?",
-                "What is your favorite movie/book/TV show?"
-            )
-            val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, securityQuestions)
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            securityQuestionSpinner.adapter = adapter
             val selectedSecurityQuestionPosition = securityQuestions.indexOf(securityQuestion)
-            securityQuestionSpinner.setSelection(selectedSecurityQuestionPosition)
+            if (selectedSecurityQuestionPosition >= 0) {
+                securityQuestionSpinner.setSelection(selectedSecurityQuestionPosition)
+            }
 
             // Set security answer
-            securityAnswerEditText.setText(securityAnswer)
+            securityAnswerEditText.setText(securityAnswer ?: "")
         }
 
         // Setting click listener for the save button
@@ -71,6 +75,12 @@ class account : AppCompatActivity() {
             val password2 = passwordEditText2.text.toString()
             val securityQuestion = securityQuestionSpinner.selectedItem.toString()
             val securityAnswer = securityAnswerEditText.text.toString()
+
+            // Validate inputs
+            if (nickname.isEmpty() || username.isEmpty() || password1.isEmpty() || password2.isEmpty() || securityAnswer.isEmpty()) {
+                Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Saving data to SharedPreferences
             val editor = sharedPreferences.edit()

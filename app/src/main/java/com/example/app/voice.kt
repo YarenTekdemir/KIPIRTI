@@ -11,17 +11,21 @@ import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.lottie.LottieAnimationView
+import com.example.app.databinding.ResetpswdBinding
+import com.example.app.databinding.VoiceBinding
 import java.util.*
 import kotlin.math.min
 
 class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
-
+    private lateinit var binding: VoiceBinding
     private lateinit var sentenceTextView: TextView
     private lateinit var checkButton: Button
     private lateinit var volumeIcon: ImageView
@@ -29,11 +33,19 @@ class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var speechRecognizer: SpeechRecognizer
     private lateinit var correctSound: MediaPlayer
     private lateinit var incorrectSound: MediaPlayer
+    private lateinit var lottieAnimationView: LottieAnimationView
+    private lateinit var lottieAnimationView2: LottieAnimationView
+    private lateinit var lottieAnimationView3: LottieAnimationView
+    private lateinit var lottieAnimationView4: LottieAnimationView
+    private lateinit var lottieAnimationView5: LottieAnimationView
+    private var isAnime1Playing = true
 
     private val sentences = listOf(
         "I love oranges.",
         "The sky is blue.",
-        "She enjoys swimming in the ocean.",
+        "I love cats.",
+        "I love life.",
+        "I am happy.",
         "My sister plays the piano very well.",
         "We live in a small town.",
         "He always wakes up early.",
@@ -62,7 +74,35 @@ class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.voice)
+        binding = VoiceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.homeButton.setOnClickListener {
+            intent = Intent(applicationContext, main_page::class.java)
+            startActivity(intent)
+        }
+
+        binding.profileButton.setOnClickListener {
+            intent = Intent(applicationContext, profile_page_2::class.java)
+            startActivity(intent)        }
+
+        binding.gameButton.setOnClickListener {
+            intent = Intent(applicationContext, game::class.java)
+            startActivity(intent)        }
+
+        binding.hearButton.setOnClickListener {
+            intent = Intent(applicationContext, voice::class.java)
+            startActivity(intent)        }
+
+
+
+
+
+        // Initialize LottieAnimationViews
+        lottieAnimationView = findViewById(R.id.lottieAnimationView)
+        lottieAnimationView2 = findViewById(R.id.lottieAnimationView2)
+        lottieAnimationView3 = findViewById(R.id.lottieAnimationView3)
+        lottieAnimationView4 = findViewById(R.id.lottieAnimationView4)
+        lottieAnimationView5 = findViewById(R.id.lottieAnimationView5)
 
         sentenceTextView = findViewById(R.id.sentenceTextView)
         checkButton = findViewById(R.id.checkButton)
@@ -71,6 +111,11 @@ class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
         incorrectSound = MediaPlayer.create(this, R.raw.incorrect_sound)
 
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+        lottieAnimationView2.visibility = View.GONE
+        lottieAnimationView3.visibility = View.GONE
+        lottieAnimationView4.visibility = View.GONE
+        lottieAnimationView5.visibility = View.GONE
+
 
         textToSpeech = TextToSpeech(this, this)
 
@@ -89,8 +134,39 @@ class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
                 stopSpeaking()
             } else {
                 startSpeaking()
+
             }
         }
+    }
+    private fun switchAnimations() {
+        when {
+            isAnime1Playing -> {
+                lottieAnimationView.visibility = View.GONE
+                lottieAnimationView2.visibility = View.VISIBLE
+                isAnime1Playing = false
+            }
+            !isAnime1Playing && lottieAnimationView2.visibility == View.VISIBLE -> {
+                lottieAnimationView2.visibility = View.GONE
+                lottieAnimationView3.visibility = View.VISIBLE
+            }
+            !isAnime1Playing && lottieAnimationView3.visibility == View.VISIBLE -> {
+                lottieAnimationView3.visibility = View.GONE
+                lottieAnimationView4.visibility = View.VISIBLE
+            }
+            !isAnime1Playing && lottieAnimationView4.visibility == View.VISIBLE -> {
+                lottieAnimationView4.visibility = View.GONE
+                lottieAnimationView5.visibility = View.VISIBLE
+            }
+            !isAnime1Playing && lottieAnimationView5.visibility == View.VISIBLE -> {
+                lottieAnimationView5.visibility = View.GONE
+                lottieAnimationView.visibility = View.VISIBLE
+                isAnime1Playing = true
+            }
+        }
+    }
+
+    private fun playNextAnimation() {
+        switchAnimations()
     }
 
     private fun startSpeechRecognition() {
@@ -164,6 +240,8 @@ class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
                     if (isCorrect) {
                         correctSound.start() // Play correct sound
                         showConfirmationDialog()
+                        playNextAnimation()
+
                     } else {
                         incorrectSound.start() // Play incorrect sound
                         tryagain()
@@ -249,19 +327,19 @@ class voice : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
 
-
     private fun startSpeaking() {
         val text = sentenceTextView.text.toString()
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
         isSpeaking = true
-        volumeIcon.setImageResource(R.drawable.hear)
+        volumeIcon.setImageResource(R.drawable.hear) // Set the drawable for speaking state
     }
 
     private fun stopSpeaking() {
         textToSpeech.stop()
         isSpeaking = false
-        volumeIcon.setImageResource(R.drawable.hear)
+        volumeIcon.setImageResource(R.drawable.hear) // Set the drawable for not speaking state
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

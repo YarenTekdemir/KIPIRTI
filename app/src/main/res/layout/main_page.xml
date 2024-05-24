@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_gradient">
+    android:layout_height="match_parent">
 
     <!-- Content of the second page -->
     <ScrollView
+        android:background="@drawable/background_gradient"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,30 +21,94 @@
                 android:id="@+id/thoughtInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:hint="Share your thoughts..."
                 android:inputType="textMultiLine"
                 android:maxLines="3"
-                android:minHeight="48dp"
-                android:layout_marginBottom="16dp" />
+                android:minHeight="48dp" />
 
             <!-- Button to post thoughts -->
             <Button
                 android:id="@+id/postButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Post"
                 android:layout_gravity="end"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF7043"
+                android:textColor="#FFFFFF"
+                android:text="Post" />
 
             <!-- Layout to display posts -->
             <LinearLayout
                 android:id="@+id/postsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
 
-    <!-- Include the navigation bar layout at the bottom -->
-    <include layout="@layout/navbar" />
+
+
+        <!-- Navigation bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavbar"
+        android:layout_width="397mm"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <!-- ImageButtons for navigation items -->
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#E6603B   "
+            android:contentDescription="@string/home_icon_description"
+
+            android:src="@drawable/home"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/hearButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/add_icon_description"
+            android:src="@drawable/hear"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <ImageButton
+            android:id="@+id/gameButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/game_icon_description"
+            android:src="@drawable/game"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFA48B  "
+            android:contentDescription="@string/profile_icon_description"
+            android:src="@drawable/logo"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </LinearLayout>
+
+
 </RelativeLayout>

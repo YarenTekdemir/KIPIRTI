@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient">
@@ -11,24 +14,41 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/headlineTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:text="Achievements Page"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <!-- Achievement 1 -->
+            <ImageButton
+                android:id="@+id/achivementsbutton"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
+                android:background="@drawable/left"
+                android:contentDescription="@string/ok_button_description"
+                android:onClick="buttonClick"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/settings_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:text="Achivements"
+                android:textColor="#D32F2F"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="25dp"
             android:padding="16dp"
-            android:background="@color/purple_200">
+        >
 
             <ImageView
                 android:id="@+id/achievementIconImageView"
@@ -50,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:text="Achievement Title"
                     android:textSize="18sp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="#C2185B"/>
 
                 <TextView
                     android:id="@+id/achievementDescriptionTextView"
@@ -70,7 +90,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="16dp"
             android:padding="16dp"
-            android:background="@color/purple_200">
+          >
 
 
             <ImageView
@@ -93,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:text="Achievement Title"
                     android:textSize="18sp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="#C2185B"/>
 
                 <TextView
                     android:id="@+id/achievementDescriptionTextView2"
@@ -114,7 +134,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="16dp"
             android:padding="16dp"
-            android:background="@color/purple_200">
+            >
 
             <ImageView
                 android:id="@+id/achievementIconImageView3"
@@ -136,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:text="Achievement Title"
                     android:textSize="18sp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="#C2185B"/>
 
                 <TextView
                     android:id="@+id/achievementDescriptionTextView3"
@@ -157,7 +177,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="16dp"
             android:padding="16dp"
-            android:background="@color/purple_200">
+     >
 
             <ImageView
                 android:id="@+id/achievementIconImageView4"
@@ -179,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:text="Achievement Title"
                     android:textSize="18sp"
-                    android:textColor="@android:color/black"/>
+                    android:textColor="#C2185B"/>
 
                 <TextView
                     android:id="@+id/achievementDescriptionTextView4"
@@ -196,3 +216,5 @@
     </LinearLayout>
 
 </ScrollView>
+    <!-- Navigation bar -->
+</RelativeLayout>
